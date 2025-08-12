@@ -27,6 +27,7 @@ const cookieParser = require('cookie-parser');
 const userPath = path.join(__dirname, "./database/user.json");
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use('/img', express.static(path.join(__dirname, 'img')));
 
 function loadAkses() {
   if (!fs.existsSync(file)) fs.writeFileSync(file, JSON.stringify({ owners: [], akses: [] }, null, 2));
@@ -2447,7 +2448,7 @@ input[type="text"] {
   <div id="particles">
   <div id="webcoderskull">
   <div class="container">
-    <img src="https://files.catbox.moe/db1ynz.jpg" alt="Logo" class="logo" />
+    <img src="img/necro.jpg" alt="Logo" class="logo" />
     <div class="username">Welcome, ${username || 'Anonymous'}</div>
     <div id="botStatus" class="disconnected">NOT CONNECTED</div>
 
@@ -3426,7 +3427,7 @@ const userRows = users
     <section id="overview" class="text-white flex flex-col items-center w-full space-y-6">
       <!-- Logo -->
      <div class="w-[43%] aspect-square rounded-full overflow-hidden flex items-center justify-center logo-glow">
-  <img src="https://files.catbox.moe/db1ynz.jpg" 
+  <img src="img/necro.jpg" 
        alt="Logo" 
        class="w-full h-full object-cover">
 </div>
@@ -3437,7 +3438,7 @@ const userRows = users
       <!-- Info Card -->
       <div class="relative w-full max-w-5xl rounded-lg overflow-hidden shadow-lg glow-red"
        style="
-       background-image: url('https://files.catbox.moe/db1ynz.jpg');
+       background-image: url('img/necro.jpg');
        background-size: cover;
        background-position: center;
        box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4), 0 0 15px rgba(255, 0, 0, 0.6);
