@@ -1,0 +1,16 @@
+[
+  {
+    "username": "snith",
+    "key": "ZJZC",
+    "expired": 1756540491527,
+    "deviceId": "dev-189a0b18",
+    "role": "owner"
+  },
+  {
+    "username": "snithOwner",
+    "key": "2MLF",
+    "expired": 1757531461235,
+    "role": "owner",
+    "deviceId": "dev-7a8699a7"
+  }
+]
