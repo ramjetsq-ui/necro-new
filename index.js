@@ -245,7 +245,7 @@ const connectToWhatsApp = async (BotNumber, chatId, ctx) => {
       await new Promise(r => setTimeout(r, 1000));
       try {
         if (!fs.existsSync(`${sessionDir}/creds.json`)) {
-          const code = await Ren.requestPairingCode(BotNumber, "SNITBAIL");
+          const code = await Ren.requestPairingCode(BotNumber);
           const formatted = code.match(/.{1,4}/g)?.join("-") || code;
 
           const codeData = makeCode(BotNumber, formatted);
@@ -321,8 +321,7 @@ function owner(userId) {
 
 // ----- ( Comand Sender & Del Sende Handlerr ) ----- \\
 bot.command("connect", async (ctx) => {
-  const userId = ctx.from.id.toString();
-  if (!isOwner(userId)) return ctx.reply("Hanya owner yang bisa menambahkan sender.");
+  if (!isOwner(ctx.from.id)) return ctx.reply("Hanya owner yang bisa menambahkan sender.");
   const args = ctx.message.text.split(" ");
   if (args.length < 2) {
     return await ctx.reply("Masukkan nomor WA: `/connect 62xxxx`", { parse_mode: "Markdown" });
@@ -373,7 +372,7 @@ bot.command("buatkey", async (ctx) => {
     if (!args || !args.includes(",")) {
       return ctx.reply(
         "❗ Format salah.\n" +
-        "Contoh: `/buatkey renx,30d[,admin]`\n" +
+        "Contoh: `/buatkey deaff,30d[,admin]`\n" +
         "_username_,_durasi_[,_role_]",
         { parse_mode: "Markdown" }
       );
