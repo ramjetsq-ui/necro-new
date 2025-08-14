@@ -2445,8 +2445,6 @@ input[type="text"] {
 </style>
 </head>
 <body>
-  <div id="particles">
-  <div id="webcoderskull">
   <div class="container">
     <img src="img/necro.jpg" alt="Logo" class="logo" />
     <div class="username">Welcome, ${username || 'Anonymous'}</div>
@@ -2479,8 +2477,6 @@ input[type="text"] {
         <i class="fas fa-hourglass-half"></i> ${formattedTime}
       </div>
     </div>
-  </div>
-</div>
   </div>
   <script>
   async function updateBotStatus() {
